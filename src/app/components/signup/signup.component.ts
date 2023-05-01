@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from 'src/app/services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { validPattern } from 'src/app/_helpers/patter-match.validator';
+import { MustMatch } from 'src/app/_helpers/must-match.validator';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -17,12 +19,20 @@ export class SignupComponent implements OnInit {
     console.log(this.frm.value);
   }
   ngOnInit(): void {
-    this.frm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-    });
+    const patternRegex = new RegExp(
+      '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*[#$^+=!*()@%&]).{6,}$'
+    );
+    this.frm = this.fb.group(
+      {
+        name: ['', Validators.required],
+        email: ['', Validators.required],
+        username: ['', Validators.required],
+        password: ['', [Validators.required, validPattern(patternRegex)]],
+        confirmPassword: ['', Validators.required],
+      },
+      {
+        validator: MustMatch('password', 'confirmPassword'),
+      }
+    );
   }
 }

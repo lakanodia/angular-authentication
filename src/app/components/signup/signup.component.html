@@ -78,10 +78,10 @@
           Password is required
         </span>
 
-        <!-- <span>
+        <span *ngIf="f['password'].errors?.['invalidPattern']">
           Atleast 6 character long,must contain 1 uppercase, 1 lowercase, 1
           digit and 1 special character
-        </span> -->
+        </span>
       </div>
 
       <div class="input-container">
@@ -104,7 +104,9 @@
         <span *ngIf="f['confirmPassword'].errors?.['required']">
           ConfirmPassword is required
         </span>
-        <!-- <span> Password and confirm password should be matched </span> -->
+        <span *ngIf="f['confirmPassword'].errors?.['mustMatch']">
+          Password and confirm password should be matched
+        </span>
       </div>
 
       <button [disabled]="frm.invalid" type="submit" id="btnSubmit">
