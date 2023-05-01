@@ -1,6 +1,6 @@
 <div class="form-container">
   <div class="form login">
-    <form>
+    <form [formGroup]="frmLogin" (ngSubmit)="onPost()">
       <div class="title">Login</div>
       <div class="input-container">
         <input
@@ -8,10 +8,19 @@
           name="username"
           class="input"
           placeholder="Username"
+          formControlName="username"
         />
       </div>
-      <div class="msg error">
-        <span> Username is required </span>
+      <div
+        class="msg error"
+        *ngIf="
+          f['username'].invalid &&
+          (f['username'].dirty || f['username'].touched)
+        "
+      >
+        <span *ngIf="f['username'].errors?.['required']">
+          Username is required
+        </span>
       </div>
 
       <div class="input-container">
@@ -20,14 +29,23 @@
           name="password"
           class="input"
           placeholder="Password"
+          formControlName="password"
         />
       </div>
-      <div class="msg error">
-        <span> Password is required </span>
+      <div
+        class="msg error"
+        *ngIf="
+          f['password'].invalid &&
+          (f['password'].dirty || f['password'].touched)
+        "
+      >
+        <span *ngIf="f['password'].errors?.['required']">
+          Password is required
+        </span>
       </div>
       <button type="submit" id="btnSubmit">Login</button>
       <div class="msg light"></div>
-        <a routerLink="/signup" class="link">Not a member? Signup here</a>
+      <a routerLink="/signup" class="link">Not a member? Signup here</a>
     </form>
   </div>
 </div>

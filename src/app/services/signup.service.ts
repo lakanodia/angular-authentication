@@ -14,9 +14,9 @@ export class SignupService {
   public baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) {}
 
-  // login(model: ILoginRequestModel) {
-  //   return this.http.post<ILoginResponseModel>(this.baseUrl + 'posts', model);
-  // }
+  login(model: ILoginRequestModel) {
+    return this.http.post<IStatus>(this.baseUrl + '/login', model);
+  }
 
   signup(model: ISignupRequestModel) {
     return this.http.post<IStatus>(this.baseUrl + '/signup', model);
