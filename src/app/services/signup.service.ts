@@ -11,18 +11,18 @@ import { ILoginResponseModel } from '../models/login-response';
   providedIn: 'root',
 })
 export class SignupService {
-  private baseUrl = environment.baseUrl;
+  public baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) {}
 
-  login(model: ILoginRequestModel) {
-    return this.http.post<ILoginResponseModel>(this.baseUrl + 'posts', model);
-  }
+  // login(model: ILoginRequestModel) {
+  //   return this.http.post<ILoginResponseModel>(this.baseUrl + 'posts', model);
+  // }
 
   signup(model: ISignupRequestModel) {
-    return this.http.post<IStatus>(this.baseUrl + 'comments', model);
+    return this.http.post<IStatus>(this.baseUrl + '/signup', model);
   }
 
-  changePassword(model: IChangePasswordModel) {
-    return this.http.post<IStatus>(this.baseUrl + 'profile', model);
-  }
+  // changePassword(model: IChangePasswordModel) {
+  //   return this.http.post<IStatus>(this.baseUrl + 'profile', model);
+  // }
 }

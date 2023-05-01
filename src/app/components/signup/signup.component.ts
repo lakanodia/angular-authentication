@@ -3,6 +3,7 @@ import { SignupService } from 'src/app/services/signup.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validPattern } from 'src/app/_helpers/patter-match.validator';
 import { MustMatch } from 'src/app/_helpers/must-match.validator';
+import { IStatus } from 'src/app/models/status';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,12 +12,26 @@ import { MustMatch } from 'src/app/_helpers/must-match.validator';
 export class SignupComponent implements OnInit {
   constructor(private signupService: SignupService, private fb: FormBuilder) {}
   frm!: FormGroup;
+  status!: IStatus;
+
   get f() {
     return this.frm.controls;
   }
 
   onPost() {
-    console.log(this.frm.value);
+    this.status = { statusCode: 0, message: 'wait..' };
+    this.signupService.signup(this.frm.value).subscribe({
+      next: (res) => {
+        this.status = res;
+        alert(`${res.message}`);
+        this.frm.reset();
+      },
+      error: (err) => {
+        this.status = err;
+        alert(`Error ${err.error.message}`);
+        this.frm.reset();
+      },
+    });
   }
   ngOnInit(): void {
     const patternRegex = new RegExp(
