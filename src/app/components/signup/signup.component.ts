@@ -4,13 +4,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { validPattern } from 'src/app/_helpers/patter-match.validator';
 import { MustMatch } from 'src/app/_helpers/must-match.validator';
 import { IStatus } from 'src/app/models/status';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private signupService: SignupService, private fb: FormBuilder) {}
+  constructor(
+    private signupService: SignupService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
   frm!: FormGroup;
   status!: IStatus;
 
@@ -25,6 +30,7 @@ export class SignupComponent implements OnInit {
         this.status = res;
         alert(`${res.message}`);
         this.frm.reset();
+        this.router.navigate(['login']);
       },
       error: (err) => {
         this.status = err;

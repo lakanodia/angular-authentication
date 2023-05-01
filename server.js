@@ -35,7 +35,7 @@ server.post("/signup", (req, res) => {
 
   router.db.get("users").push(newUser).write();
 
-  res.status(201).json({ statusCode: 201, message: "Successfuly registered" });
+  res.status(201).json({ statusCode: 201, message: "Successfully registered" });
 });
 
 server.post("/login", (req, res) => {
@@ -54,7 +54,6 @@ server.post("/login", (req, res) => {
       .status(401)
       .json({ statusCode: 401, message: "Incorrect username or password" });
   }
-
   res.status(200).json({ statusCode: 200, message: "Logged in successfully" });
 });
 

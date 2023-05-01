@@ -1,7 +1,9 @@
-export interface ILoginResponseModel {
+import { IStatus } from './status';
+
+export interface ILoginResponseModel extends IStatus {
   token: string;
   refreshToken: string;
-  exporation: string;
+  expiration: string;
   name: string;
   username: string;
 }

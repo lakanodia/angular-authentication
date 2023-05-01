@@ -15,7 +15,7 @@ export class SignupService {
   constructor(private http: HttpClient) {}
 
   login(model: ILoginRequestModel) {
-    return this.http.post<IStatus>(this.baseUrl + '/login', model);
+    return this.http.post<ILoginResponseModel>(this.baseUrl + '/login', model);
   }
 
   signup(model: ISignupRequestModel) {
