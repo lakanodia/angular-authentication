@@ -1,9 +1,11 @@
-import { IStatus } from './status';
+// import { IStatus } from './status'; // statusCode: number;  message: string;
 
-export interface ILoginResponseModel extends IStatus {
-  token: string;
-  refreshToken: string;
-  expiration: string;
-  name: string;
-  username: string;
+export interface ILoginResponseModel {
+  accessToken: string;
+  user: {
+    name: string;
+    confirmPassword: string;
+    email: string;
+    username: string;
+  };
 }

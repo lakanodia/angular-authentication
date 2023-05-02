@@ -19,7 +19,7 @@ export class SignupService {
   }
 
   signup(model: ISignupRequestModel) {
-    return this.http.post<IStatus>(this.baseUrl + '/signup', model);
+    return this.http.post<IStatus>(this.baseUrl + '/register', model);
   }
 
   // changePassword(model: IChangePasswordModel) {

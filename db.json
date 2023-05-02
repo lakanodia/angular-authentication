@@ -1,44 +1,28 @@
 {
   "users": [
     {
-      "id": 1682945013014,
-      "name": "test9",
-      "email": "test9@gmail.com",
-      "username": "test9",
-      "password": "Qwer123!",
-      "confirmPassword": "Qwer123"
+      "email": "testemail@gmail.com",
+      "password": "$2a$10$/QjLCO.DSE6BuB64siacleSeeSq0BRry7FJmQWruoT8fBlRfXCgdm",
+      "name": "testname",
+      "username": "testname",
+      "confirmPassword": "Qwer123!",
+      "id": 1682945830636
     },
     {
-      "id": 1682945518394,
-      "name": "laka",
-      "email": "laka.nodia@gmail.com",
-      "username": "lakanodia",
-      "password": "Laka123!",
-      "confirmPassword": "Laka123!"
+      "email": "test2@gmail.com",
+      "password": "$2a$10$yfaVPEKMl9kSbWgPUg7SSePmrNtyJTeDZeYoPFnjkaydWsD3ATGrK",
+      "name": "test2name",
+      "username": "test2",
+      "confirmPassword": "Test123!",
+      "id": 1682945830637
     },
     {
-      "id": 1682945574294,
-      "name": "lika",
-      "email": "lika.nodia@gmail.com",
-      "username": "likanodia",
-      "password": "Lika123!",
-      "confirmPassword": "Lika123!"
-    },
-    {
-      "id": 1682945830635,
-      "name": "test4",
-      "email": "test4@gmail.com",
-      "username": "test4",
-      "password": "Test123!",
-      "confirmPassword": "Test123!"
-    },
-    {
-      "id": 1682949935887,
-      "name": "newuser",
-      "email": "nueuser@gmail.com",
-      "username": "newuser",
-      "password": "Newuser123!",
-      "confirmPassword": "Newuser123!"
+      "email": "testname2@gmail.com",
+      "password": "$2a$10$p3705a4O38adJ1u55PtOEuujIUtu9A/4cO5KY0zxBvrIVp4dGr4QG",
+      "name": "testname2",
+      "username": "testname2",
+      "confirmPassword": "Qwer123!",
+      "id": 1682945830638
     }
   ]
 }

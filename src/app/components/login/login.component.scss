@@ -4,12 +4,13 @@
   font-family: sans-serif;
 }
 .form-container {
-  background-color: #000;
+  background-color: #c7c7c7;
   /* background-image: url('/images/darkbg2.jpg'); */
   display: flex;
   justify-content: center;
   height: 100vh;
   box-sizing: border-box;
+  margin: 0;
 }
 .form {
   width: 400px;

@@ -17,24 +17,27 @@ export class SignupComponent implements OnInit {
     private router: Router
   ) {}
   frm!: FormGroup;
-  status!: IStatus;
+  // status!: IStatus;
 
   get f() {
     return this.frm.controls;
   }
 
   onPost() {
-    this.status = { statusCode: 0, message: 'wait..' };
+    // this.status = { statusCode: 0, message: 'wait..' };
     this.signupService.signup(this.frm.value).subscribe({
       next: (res) => {
-        this.status = res;
-        alert(`${res.message}`);
+        console.log(res);
+        // this.status = res;
+        // alert(`${res.message}`);
+        alert('You registered successfully');
         this.frm.reset();
         this.router.navigate(['login']);
       },
       error: (err) => {
-        this.status = err;
-        alert(`Error ${err.error.message}`);
+        console.log(err.error);
+        // this.status = err;
+        alert(`Error ${err.error}`);
         this.frm.reset();
       },
     });

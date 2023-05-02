@@ -5,22 +5,17 @@
       <div class="input-container">
         <input
           type="text"
-          name="username"
+          name="email"
           class="input"
-          placeholder="Username"
-          formControlName="username"
+          placeholder="Email"
+          formControlName="email"
         />
       </div>
       <div
         class="msg error"
-        *ngIf="
-          f['username'].invalid &&
-          (f['username'].dirty || f['username'].touched)
-        "
+        *ngIf="f['email'].invalid && (f['email'].dirty || f['email'].touched)"
       >
-        <span *ngIf="f['username'].errors?.['required']">
-          Username is required
-        </span>
+        <span *ngIf="f['email'].errors?.['required']"> Email is required </span>
       </div>
 
       <div class="input-container">
