@@ -10,7 +10,11 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Angular-Authentication';
   isLoggedIn!: boolean;
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
+
+  checkLoggedInUser() {
+    this.isLoggedIn = this.authService.isLoggedIn();
+  }
 
   logout() {
     this.authService.logout();
