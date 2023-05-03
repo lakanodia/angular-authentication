@@ -25,3 +25,9 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Json-server library
+commands:
+npm install express json-server json-server-auth --save
+json-server db.json -m ./node_modules/json-server-auth -r routes.json
+
