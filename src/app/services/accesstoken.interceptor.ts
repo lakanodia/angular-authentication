@@ -19,7 +19,7 @@ export class AccesstokenInterceptor implements HttpInterceptor {
     let authService = this.injector.get(AuthService);
     let tokenizeReq = request.clone({
       setHeaders: {
-        Authorization: `Bearer${authService.getAccessToken()} `,
+        Authorization: `Bearer ${authService.getAccessToken()} `,
       },
     });
     return next.handle(tokenizeReq);
