@@ -1,5 +1,9 @@
 <div class="content">
   <div class="card">
-    <span class="heading">Welcome User</span>
+    <span class="heading">Welcome User </span>
+    <ul *ngFor="let user of usersData">
+      <li><strong>Users name: </strong> {{ user.name }}</li>
+      <li><strong>Users email: </strong>{{ user.email }}</li>
+    </ul>
   </div>
 </div>

@@ -8,14 +8,19 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class UserComponent implements OnInit {
   constructor(private usersService: UsersService) {}
+  usersData: any = [];
 
   ngOnInit(): void {
     this.usersService.getUserData().subscribe({
       next: (res) => {
         console.log(res);
+        this.usersData = res;
       },
       error: (err) => {
         console.log(err);
+        if (err.status === 401) {
+          alert(`You don 't have access to this resource`);
+        }
       },
     });
   }

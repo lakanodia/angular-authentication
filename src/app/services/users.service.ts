@@ -6,10 +6,10 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class UsersService {
-  private baseUrl = 'https://jsonplaceholder.typicode.com/users';
+  private baseUrl = environment.baseUrl;
   constructor(private http: HttpClient) {}
 
   getUserData() {
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl + '/users');
   }
 }
