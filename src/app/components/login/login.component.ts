@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { IStatus } from 'src/app/models/status';
 import { AuthService } from 'src/app/services/auth.service';
 import { SignupService } from 'src/app/services/signup.service';
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private signupService: SignupService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastr: ToastrService
   ) {}
 
   onPost() {
@@ -33,14 +35,14 @@ export class LoginComponent implements OnInit {
         // this.status = res;
         console.log('res', res);
         // alert(`${res.message}`);
-        alert('Login Successfuly');
+        this.toastr.success('Login Successfuly', 'Login');
         this.frmLogin.reset();
         this.router.navigate(['dashboard']);
       },
       error: (err) => {
         // this.status = err;
         console.log(err);
-        alert(`Error ${err.error}`);
+        this.toastr.error(err.error, 'Error');
         this.frmLogin.reset();
       },
     });
