@@ -1,27 +1,55 @@
-# AngularAuthentication
+# About project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+## Angular Authentication project is about:
 
-## Development server
+- concepts of authentication in angular;
+- concepts of route guard;
+- concepts of http interceptor.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project uses JSON server fake REST API.
 
-## Code scaffolding
+# Getting Started Angular Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+### Install Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm i @angular/cli
+```
 
-## Running unit tests
+### Create Angular node_modules folder
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+```
 
-## Running end-to-end tests
+### Run Angular Authentication project
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run ng serve for a dev server. Navigate to http://localhost:4200/
 
-## Further help
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Npm Install JSON server
+
+### Install Json-server
+
+```bash
+npm i json-server
+
+
+```
+
+### Install Json-server-auth
+
+```bash
+npm install express json-server json-server-auth --save
+```
+
+### Run JSON-server
+
+```bash
+json-server db.json -m ./node_modules/json-server-auth -r routes.json
+```
